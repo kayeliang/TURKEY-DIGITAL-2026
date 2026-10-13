@@ -1,0 +1,5 @@
+.app-main>.page{animation:page-enter .28s cubic-bezier(.2,.8,.2,1) both}.nav-item{transition:color .24s ease,transform .18s ease}.nav-item:active{transform:scale(.92)}.nav-item.active,.nav-item.active .nav-icon{color:#111}.nav-item.active{animation:nav-item-enter .3s cubic-bezier(.2,.8,.2,1) both}.nav-item.active .nav-icon{animation:nav-icon-pop .34s cubic-bezier(.2,.8,.2,1) both}
+.ticket-icon{display:inline-block;height:.72em;min-width:1.08em;position:relative;border:2px solid currentColor;border-radius:2px;vertical-align:-.06em}.ticket-icon:after{border-top:1px dashed currentColor;content:"";left:22%;position:absolute;right:22%;top:50%}
+.bottom-nav{grid-template-columns:repeat(3,1fr)}
+@keyframes page-enter{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}@keyframes nav-item-enter{0%{opacity:.7;transform:translateY(3px)}100%{opacity:1;transform:translateY(0)}}@keyframes nav-icon-pop{0%{transform:scale(.82)}62%{transform:scale(1.14)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.app-main>.page,.nav-item.active,.nav-item.active .nav-icon{animation:none}.nav-item{transition:none}}
