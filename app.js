@@ -73,7 +73,8 @@
     ...data.activities.filter((item) => item.mapQuery).map((item) => mapLocations[item.id] ? { ...mapLocations[item.id], id: item.id, label: item.title, mapQuery: item.mapQuery, mapPlaceId: item.mapPlaceId } : null)
   ].filter(Boolean);
   const locationQuery = (label) => {
-    const accommodation = data.accommodations.find((item) => item.name === label || item.area === label || (item.city === "Antalya" && String(label).includes("Antalya民宿")));
+    const normalizedLabel = String(label).replace(/\s+/g, "");
+    const accommodation = data.accommodations.find((item) => item.name === label || item.area === label || String(item.name).replace(/\s+/g, "") === normalizedLabel || String(item.area).replace(/\s+/g, "") === normalizedLabel || (item.city === "Antalya" && normalizedLabel.includes("Antalya民宿")));
     return accommodation?.address || label;
   };
   const transportLocationLink = (label) => `<a class="transport-place-link" href="${mapsUrl(locationQuery(label))}" target="_blank" rel="noopener">${escapeHtml(label)} <span>${icon("pin")}</span></a>`;
